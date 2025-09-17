@@ -14,12 +14,11 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "daisyui": "^5.0.43",
+    "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.13",
-      "plugins": "prettier-plugin-tailwindcss",
-      "tailwindStylesheet": "./style/output.css"
+    "prettier-plugin-tailwindcss": "^0.6.13"
   }
 }

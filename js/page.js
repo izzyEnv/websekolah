@@ -54,6 +54,35 @@ if (
 } else {
   darkToggle.checked = false;
 }
-// ...existing code...
+// scroll infinite responsive
+function infiniteScrollResponsive() {
+  const c = document.getElementById("infinite-scroll");
+  const t = document.getElementById("scroll-track");
+  if (!c || !t) return;
+  if (!t.dataset.original) t.dataset.original = t.innerHTML;
+  if (window.innerWidth < 768) { // hanya aktif di mobile
+    t.innerHTML = t.dataset.original + t.dataset.original;
+    const w = t.scrollWidth / 2;
+    c.scrollLeft = w;
+    c.onscroll = function () {
+      if (c.scrollLeft <= 0) c.scrollLeft = w;
+      else if (c.scrollLeft >= t.scrollWidth - c.offsetWidth) c.scrollLeft = w - c.offsetWidth;
+    };
+  } else {
+    t.innerHTML = t.dataset.original;
+    c.onscroll = null;
+  }
+}
+document.addEventListener("DOMContentLoaded", infiniteScrollResponsive);
+window.addEventListener("resize", infiniteScrollResponsive);
+
+// Back to Top click handler (smooth scroll)
+const toTopBtn = document.querySelector('#toTop');
+if (toTopBtn) {
+  toTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
   
 

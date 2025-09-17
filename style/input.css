@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
 @source "./*.{html,js}";
 @plugin "daisyui";
+
 /* Baris-baris berikut dihapus karena bukan konfigurasi Tailwind CSS v4 atau DaisyUI yang valid di CSS. */
 /* Jalur konten Tailwind CSS dan konfigurasi plugin DaisyUI harus berada di tailwind.config.js */
 @custom-variant dark (&:where(.dark, .dark *));
