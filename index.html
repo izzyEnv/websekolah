@@ -1,349 +1,351 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>halaman blog</title>
-    <link href="style/output.css" rel="stylesheet" />
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      document.documentElement.classList.toggle(
-        "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches),
-      );
-    </script>
-  </head>
-  <body class="font-sans">
-    <!-- bagian header -->
-    <header
-      class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent"
-    >
-      <div class="container">
-        <div class="relative flex items-center justify-between">
-          <div class="p-4">
-            <img
-              src="asset/img/logo.png"
-              alt="ufa"
-              class="w-12 md:w-20 lg:w-20"
-            />
-          </div>
-          <div class="flex items-center px-4">
-            <button
-              id="hamburger"
-              name="hamburger"
-              type="button"
-              class="absolute right-4 block lg:hidden"
-            >
-              <span
-                class="hamburger-line origin-top-left bg-slate-900 transition duration-300 ease-in-out"
-              ></span>
-              <span
-                class="hamburger-line bg-slate-900 transition duration-300 ease-in-out"
-              ></span>
-              <span
-                class="hamburger-line origin-bottom-left bg-slate-900 transition duration-300 ease-in-out"
-              ></span>
-            </button>
-            <nav
-              id="nav-menu"
-              class="absolute top-full right-4 hidden w-full max-w-[250px] rounded-lg bg-white py-6 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-900 dark:shadow-slate-500 lg:dark:bg-transparent"
-            >
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a href="#home" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">Beranda</a>
-                </li>
-                <!-- <li class="group">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>halaman blog</title>
+  <link href="style/output.css" rel="stylesheet" />
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+  </script>
+</head>
+
+<body class="font-sans">
+  <!-- bagian header -->
+  <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent border-2 border-black">
+    <div class="container">
+      <div class="relative flex items-center justify-between">
+        <div class="p-4">
+          <img src="asset/img/logo.png" alt="ufa" class="w-12 md:w-20 lg:w-20" />
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+            <span class="hamburger-line origin-top-left bg-slate-900 transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line bg-slate-900 transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line origin-bottom-left bg-slate-900 transition duration-300 ease-in-out"></span>
+          </button>
+          <nav id="nav-menu"
+            class="absolute top-full right-4 hidden w-full max-w-[250px] rounded-lg bg-white py-6 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-900 dark:shadow-slate-500 lg:dark:bg-transparent">
+            <ul class="block lg:flex">
+              <li class="group">
+                <a href="#home"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">Beranda</a>
+              </li>
+              <!-- <li class="group">
                   <a href="#impression" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">Kesan</a>
                 </li> -->
-                <li class="group">
-                  <a href="#jurusan" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">Jurusan</a>
-                </li>
-                <!-- <li class="group">
-                  <a href="#detail-rpl" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">RPL</a>
-                </li>
-                <li class="group">
-                  <a href="#detail-tkj" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">TKJ</a>
-                </li>
-                <li class="group">
-                  <a href="#detail-dkv" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">DKV</a>
-                </li>
-                <li class="group">
-                  <a href="#detail-tsm" class="mx-8 flex py-2 text-base text-slate-800 group-hover:text-indigo-400 dark:text-white">TSM</a>
-                </li> -->
-                <li class="mt-3 flex items-center pl-2 lg:mt-0">
-                  <div class="flex">
-                    <span class="mr-2 text-sm text-slate-600 dark:text-slate-300">light</span>
-                    <input type="checkbox" class="hidden" id="dark-toggle" />
-                    <label for="dark-toggle">
-                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+              <li class="group">
+                <a href="#jurusan"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">Jurusan</a>
+              </li>
+              <li class="group">
+                <a href="#detail-rpl"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">RPL</a>
+              </li>
+              <li class="group">
+                <a href="#detail-tkj"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">TKJ</a>
+              </li>
+              <li class="group">
+                <a href="#detail-dkv"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">DKV</a>
+              </li>
+              <li class="group">
+                <a href="#detail-tsm"
+                  class="mx-8 flex py-2 text-base font-bold text-slate-800 group-hover:text-indigo-400 dark:text-white">TSM</a>
+              </li>
+              <li class="mt-3 flex items-center pl-2 lg:mt-0">
+                <div class="flex">
+                  <span class="mr-2 text-sm font-bold text-slate-600 dark:text-slate-300">light</span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
                       </div>
-                    </label>
-                    <span class="ml-2 text-sm text-slate-600 dark:text-slate-300">dark</span>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm font-bold text-slate-600 dark:text-slate-300">dark</span>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- hero section start -->
-    <section id="home">
-      <div x-data="{ open: false }" class="bg-slate-100 dark:bg-gray-900">
-        <header>
-          <nav
-            x-data
-            class="mx-auto max-w-screen-xl items-center px-4 pt-5 sm:flex sm:space-x-6 sm:px-8"
-          >
-            <ul
-              class="flex flex-1 items-center space-x-3 py-4 sm:justify-end sm:space-x-6"
-            ></ul>
-          </nav>
-        </header>
-        <section
-          id="home"
-          class="mx-auto mt-24 max-w-screen-xl items-center px-4 pb-12 md:px-8 lg:flex"
-        >
-          <div class="flex-1 space-y-4 sm:text-center lg:text-left">
-            <h1
-              class="text-4xl font-bold text-indigo-900 xl:text-5xl dark:text-white"
-            >
-              SMK
-              
-              <span class="text-indigo-400 dark:text-indigo-500">
-                Umar Fatah Rembang</span
-              >
-            </h1>
-            <p
-              class="max-w-xl leading-relaxed text-slate-600 sm:mx-auto lg:ml-0 dark:text-slate-300"
-            >
-              Sekolah Yang Berfokus Pada Pendidikan Kejuruan Dan Teknologi
-              ,Dengan Jurusan:
-              <span class="text-md font-semibold text-black dark:text-white"
-                >Teknik Komputer Jaringan(TKJ)</span
-              >,<span class="text-md font-semibold text-black dark:text-white"
-                >Rekayasa Perangkat Lunak(RPL)</span
-              >,<span class="text-md font-semibold text-black dark:text-white"
-                >Desain Komunikasi Visual(DKV)</span
-              >, Dan
-              <span class="text-md font-semibold text-black dark:text-white"
-                >Teknik Sepeda Motor(TSM).</span
-              >
-            </p>
-            <div
-              class="items-center justify-center space-y-3 pt-10 sm:flex sm:space-y-0 sm:space-x-6 lg:justify-start"
-            >
-              <!-- <a
+  <!-- hero section start -->
+  <section id="home">
+    <div x-data="{ open: false }" class="bg-slate-100 dark:bg-gray-900">
+      <header>
+        <nav x-data class="mx-auto max-w-screen-xl items-center px-4 pt-5 sm:flex sm:space-x-6 sm:px-8">
+          <ul class="flex flex-1 items-center space-x-3 py-4 sm:justify-end sm:space-x-6"></ul>
+        </nav>
+      </header>
+      <section id="home" class="mx-auto mt-24 max-w-screen-xl items-center px-4 pb-12 md:px-8 lg:flex">
+        <div class="flex-1 space-y-4 sm:text-center lg:text-left">
+          <h1 class="text-4xl font-bold text-indigo-900 xl:text-5xl dark:text-white">
+            SMK
+
+            <span class="text-indigo-400 dark:text-indigo-500">
+              Umar Fatah Rembang</span>
+          </h1>
+          <p class="max-w-xl leading-relaxed text-slate-600 sm:mx-auto lg:ml-0 dark:text-slate-300">
+            Sekolah Yang Berfokus Pada Pendidikan Kejuruan Dan Teknologi
+            ,Dengan Jurusan:
+            <span class="text-md font-semibold text-black dark:text-white">Teknik Komputer Jaringan(TKJ)</span>,<span
+              class="text-md font-semibold text-black dark:text-white"> Rekayasa Perangkat Lunak(RPL)</span>,<span
+              class="text-md font-semibold text-black dark:text-white"> Desain Komunikasi Visual(DKV)</span>, Dan
+            <span class="text-md font-semibold text-black dark:text-white">Teknik Sepeda Motor(TSM).</span>
+          </p>
+          <div class="items-center justify-center space-y-3 pt-10 sm:flex sm:space-y-0 sm:space-x-6 lg:justify-start">
+            <!-- <a
                 href="#impression"
                 class="block w-full rounded-md bg-slate-700 px-7 py-3 text-center text-white shadow-md sm:w-auto dark:bg-white dark:text-black"
               >
                 Mulai
               </a> -->
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <!-- hero section end -->
-
-    <!-- first impression section -->
-    <section id="impression">
-      <article class="group bg-slate-100 dark:bg-gray-900">
-        <div
-          class="flex w-full justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 p-2.5 dark:from-gray-900 dark:to-gray-900"
-        >
-          <!-- Infinite horizontal scroll images -->
-
-          <div
-            id="infinite-scroll"
-            class="flex w-full snap-x scrollbar-hide snap-mandatory overflow-x-auto bg-slate-100 dark:bg-gray-900 whitespace-nowrap md:justify-center md:overflow-x-visible md:whitespace-normal"
-          >
-            <div
-              id="scroll-track"
-              class="inline-flex items-center md:flex md:items-center md:justify-center md:gap-4"
-            >
-              <img
-                src="asset/img/tkjq.png"
-                alt="tkj"
-                class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-xl transition duration-300 ease-in-out hover:grayscale"
-              />
-              <img
-                src="asset/img/dkv.jpg"
-                alt="dkv"
-                class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale"
-              />
-              <img
-                src="asset/img/rpl.jpg"
-                alt="rpl"
-                class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale"
-              />
-              <img
-                src="asset/img/tsm.jpg"
-                alt="tsm"
-                class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale"
-              />
-            </div>
           </div>
         </div>
+      </section>
+    </div>
+  </section>
+  <!-- hero section end -->
+
+  <!-- first impression section -->
+  <section id="impression">
+    <article class="group bg-slate-100 dark:bg-gray-900">
+      <div
+        class="flex w-full justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 p-2.5 dark:from-gray-900 dark:to-gray-900">
+        <!-- Infinite horizontal scroll images -->
+
+        <div id="infinite-scroll"
+          class="flex w-full snap-x scrollbar-hide snap-mandatory overflow-x-auto bg-slate-100 dark:bg-gray-900 whitespace-nowrap md:justify-center md:overflow-x-visible md:whitespace-normal">
+          <div id="scroll-track" class="inline-flex items-center md:flex md:items-center md:justify-center md:gap-4">
+            <img src="asset/img/tkjq.png" alt="tkj"
+              class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-xl transition duration-300 ease-in-out hover:grayscale" />
+            <img src="asset/img/dkv.jpg" alt="dkv"
+              class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale" />
+            <img src="asset/img/rpl.jpg" alt="rpl"
+              class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale" />
+            <img src="asset/img/tsm.jpg" alt="tsm"
+              class="mx-2 dark:bg-gray-900 inline-block h-32 w-32 rounded-full transition duration-300 ease-in-out hover:grayscale" />
+          </div>
+        </div>
+      </div>
       <div class="p-4">
         <a href="#">
-            <h3 class="text-lg font-medium text-slate-800 dark:text-slate-200">
-              Capai Dunia Yang Kamu Inginkan Dengan Menjadi Apapun yang Kamu Mau
-            </h3>
-          </a>
+          <h3 class="text-lg font-medium text-slate-800 dark:text-slate-200">
+            Capai Dunia Yang Kamu Inginkan Dengan Menjadi Apapun yang Kamu Mau
+          </h3>
+        </a>
 
-          <p
-            class="mt-2 line-clamp-3 text-sm/relaxed text-slate-600 dark:text-slate-300"
-          >
-            Blog Ini Akan Membahas Sekilas Tentang Apa saja Yang akan Dipelajari Saat Masuk Ke Sekolah Smk Sesuai Dengan Jurusan Masing Masing 
+        <p class="mt-2 line-clamp-3 text-sm/relaxed text-slate-600 dark:text-slate-300">
+          Blog Ini Akan Membahas Sekilas Tentang Apa saja Yang akan Dipelajari Saat Masuk Ke Sekolah Smk Sesuai Dengan
+          Jurusan Masing Masing
         </p>
       </div>
     </article>
   </section>
-     <!-- end impression section -->
+  <!-- end impression section -->
 
-    <!-- blog start -->
-    <section id="jurusan" class="py-10 dark:bg-gray-800 ">
-      <!-- Preview Jurusan -->
-      <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-10 dark:text-slate-300">Jurusan</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Preview TSM -->
-          <article class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
-            <img src="asset/img/motor.jpg" alt="Teknik Sepeda Motor" class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
-            <h3 class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Teknik Sepeda Motor</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
-              Belajar cara kerja motor, perawatan dan perbaikan komponen utama serta penggunaan alat bengkel dengan aman.
+  <!-- blog start -->
+  <section id="jurusan" class="py-10 dark:bg-gray-800 ">
+    <!-- Preview Jurusan -->
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-10 dark:text-slate-300">Jurusan</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Preview TSM -->
+        <article
+          class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
+          <img src="asset/img/motor.jpg" alt="Teknik Sepeda Motor"
+            class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
+          <h3
+            class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+            Teknik Sepeda Motor</h3>
+          <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
+            Belajar cara kerja motor, perawatan dan perbaikan komponen utama serta penggunaan alat bengkel dengan aman.
+          </p>
+          <a href="#detail-tsm" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat
+            detail</a>
+        </article>
+        <!-- Preview DKV -->
+        <article
+          class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
+          <img src="asset/img/dkvimg.png" alt="Desain Komunikasi Visual"
+            class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
+          <h3
+            class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+            Desain Komunikasi Visual</h3>
+          <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
+            Desain grafis, animasi, fotografi, dan videografi dengan software profesional seperti Photoshop dan
+            Illustrator.
+          </p>
+          <a href="#detail-dkv" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat
+            detail</a>
+        </article>
+        <!-- Preview RPL -->
+        <article
+          class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
+          <img src="asset/img/erpel.png" alt="Rekayasa Perangkat Lunak"
+            class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
+          <h3
+            class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+            Rekayasa Perangkat Lunak</h3>
+          <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
+            Belajar bahasa pemrograman,seperti PHP dan lainnya, pembuatan website dan aplikasi, serta tools seperti VS
+            Code dan Git.
+          </p>
+          <a href="#detail-rpl" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat
+            detail</a>
+        </article>
+        <!-- Preview TKJ -->
+        <article
+          class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
+          <img src="asset/img/network.jpg" alt="Teknik Komputer Jaringan"
+            class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
+          <h3
+            class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+            Teknik Komputer Jaringan</h3>
+          <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
+            Jaringan komputer, instalasi, konfigurasi router/switch, serta perakitan dan servis PC.
+          </p>
+          <a href="#detail-tkj" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat
+            detail</a>
+        </article>
+      </div>
+    </div>
+
+    <!-- Detail: TSM -->
+    <div id="detail-tsm" class="mx-auto max-w-screen-xl px-4 py-38 sm:py-38 sm:px-6 lg:px-8">
+      <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
+        <div>
+          <img src="asset/img/motor.jpg"
+            class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95"
+            alt="Teknik Sepeda Motor" />
+        </div>
+        <div>
+          <div class="max-w-xl">
+            <h2
+              class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+              Teknik Sepeda Motor</h2>
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
+              Disini kamu akan belajar tentang bagaimana cara motor itu sendiri bekerja, cara merawat dan memperbaiki
+              komponen utama motor—mulai dari mesin, kelistrikan, sampai kerangka dan bodi motor; selain itu juga
+              diajari cara untuk menggunakan alat bengkel, baik untuk membongkar atau memasang kembali komponen-komponen
+              motor.
             </p>
-            <a href="#detail-tsm" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat detail</a>
-          </article>
-          <!-- Preview DKV -->
-          <article class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
-            <img src="asset/img/dkvimg.png" alt="Desain Komunikasi Visual" class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
-            <h3 class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Desain Komunikasi Visual</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
-              Desain grafis, animasi, fotografi, dan videografi dengan software profesional seperti Photoshop dan Illustrator.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail: DKV -->
+    <div id="detail-dkv" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
+        <div class="order-2 md:order-1">
+          <div class="max-w-xl">
+            <h2
+              class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+              Desain Komunikasi Visual</h2>
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
+              Disini kamu akan belajar tentang bagaimana cara membuat desain yang menarik, mulai dari desain grafis,
+              animasi, fotografi, videografi, dan lainnya. Kamu akan belajar cara menggunakan software desain seperti
+              Adobe Photoshop, Illustrator, dan lainnya untuk membuat desain yang bagus dan menarik.
             </p>
-            <a href="#detail-dkv" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat detail</a>
-          </article>
-          <!-- Preview RPL -->
-          <article class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
-            <img src="asset/img/erpel.png" alt="Rekayasa Perangkat Lunak" class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
-            <h3 class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Rekayasa Perangkat Lunak</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
-              Belajar bahasa pemrograman,seperti PHP dan lainnya, pembuatan website dan aplikasi, serta tools seperti VS Code dan Git.
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <img src="asset/img/dkvimg.png"
+            class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95"
+            alt="Desain Komunikasi Visual" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail: RPL -->
+    <div id="detail-rpl" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
+        <div>
+          <img src="asset/img/erpel.png"
+            class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95"
+            alt="Rekayasa Perangkat Lunak" />
+        </div>
+        <div>
+          <div class="max-w-xl">
+            <h2
+              class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">
+              Rekayasa Perangkat Lunak</h2>
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
+              Di sini, kamu akan belajar dasar=dasar bahasa pemrograman, untuk membuat aplikasi web dan mobile. Selain
+              itu, kamu juga mempelajari pembuatan website, serta penggunaan tools seperti Visual Studio Code, Git, dan
+              lainnya.
             </p>
-            <a href="#detail-rpl" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat detail</a>
-          </article>
-          <!-- Preview TKJ -->
-          <article class="group bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col transition-shadow duration-300 hover:shadow-md">
-            <img src="asset/img/network.jpg" alt="Teknik Komputer Jaringan" class="w-full h-36 object-cover rounded-lg mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105" />
-            <h3 class="font-semibold text-lg mb-2 inline-block transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Teknik Komputer Jaringan</h3>
-            <p class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-3">
-              Jaringan komputer, instalasi, konfigurasi router/switch, serta perakitan dan servis PC.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail: TKJ -->
+    <div id="detail-tkj" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class=" grid md:grid-cols-2 items-center gap-10 lg:gap-16">
+        <div class="order-2 md:order-1">
+          <div class="max-w-xl">
+            <h2
+              class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out hover:scale-105 focus-within:scale-105">
+              Teknik Komputer Jaringan</h2>
+            <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
+              disinilah jurusan paling unik, disini kalian tidak hanya belajar tentang jaringan, kalian juga belajar
+              tentang pemrograman, kalian juga belajar tentang desain web, memang unik sekali disini. tetapi tetap saja
+              fokusnya ke jaringan dan komputer. seperti merakit/memperbaiki pc, konfigurasi perangkat jaringan seperti
+              router, switch, accesspoint, dan perangkat lainnya, selain itu juga seperti merakit kabel lan, menyambung
+              kabel fiber optik yang biasanya berada di tiang-tiang, itu juga tugasnya anak Tkj, dan sebagainya lah. <a
+                href="#my-tkj" class="text-indigo-600 hover:underline">Lihat lebih Detail</a>
             </p>
-            <a href="#detail-tkj" class="mt-auto inline-flex items-center gap-2 text-indigo-600 hover:underline">Lihat detail</a>
-          </article>
-        </div>
-      </div>
-
-      <!-- Detail: TSM -->
-      <div id="detail-tsm" class="mx-auto max-w-screen-xl px-4 py-38 sm:py-38 sm:px-6 lg:px-8">
-        <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
-          <div>
-            <img src="asset/img/motor.jpg" class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95" alt="Teknik Sepeda Motor" />
-          </div>
-          <div>
-            <div class="max-w-xl">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Teknik Sepeda Motor</h2>
-              <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
-                Disini  kamu akan belajar tentang bagaimana cara motor itu sendiri bekerja, cara merawat dan memperbaiki komponen utama motor—mulai dari mesin, kelistrikan, sampai kerangka dan bodi motor; selain itu juga diajari cara untuk menggunakan alat bengkel, baik untuk membongkar atau memasang kembali komponen-komponen motor.
-              </p>
-            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Detail: DKV -->
-      <div id="detail-dkv" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
-          <div class="order-2 md:order-1">
-            <div class="max-w-xl">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Desain Komunikasi Visual</h2>
-              <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
-                Disini kamu akan belajar tentang bagaimana cara membuat desain yang menarik, mulai dari desain grafis, animasi, fotografi, videografi, dan lainnya. Kamu akan belajar cara menggunakan software desain seperti Adobe Photoshop, Illustrator, dan lainnya untuk membuat desain yang bagus dan menarik.
-              </p>
-            </div>
-          </div>
-          <div class="order-1 md:order-2">
-            <img src="asset/img/dkvimg.png" class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95" alt="Desain Komunikasi Visual" />
-          </div>
+        <div class="order-1 md:order-2">
+          <img src="asset/img/network.jpg"
+            class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out hover:scale-95 focus-within:scale-95"
+            alt="Teknik Komputer Jaringan" />
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Detail: RPL -->
-      <div id="detail-rpl" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="group grid md:grid-cols-2 items-center gap-10 lg:gap-16">
-          <div>
-            <img src="asset/img/erpel.png" class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out group-hover:scale-95 group-focus-within:scale-95" alt="Rekayasa Perangkat Lunak" />
-          </div>
-          <div>
-            <div class="max-w-xl">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out group-hover:scale-105 group-focus-within:scale-105">Rekayasa Perangkat Lunak</h2>
-              <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
-                Di sini, kamu akan belajar dasar=dasar bahasa pemrograman, untuk membuat aplikasi web dan mobile. Selain itu, kamu juga mempelajari pembuatan website, serta penggunaan tools seperti Visual Studio Code, Git, dan lainnya.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- blog end -->
 
-      <!-- Detail: TKJ -->
-      <div id="detail-tkj" class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class=" grid md:grid-cols-2 items-center gap-10 lg:gap-16">
-          <div class="order-2 md:order-1">
-            <div class="max-w-xl">
-              <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-slate-200 mb-4 transition-transform duration-300 ease-out hover:scale-105 focus-within:scale-105">Teknik Komputer Jaringan</h2>
-              <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
-                disinilah jurusan paling unik, disini kalian tidak hanya belajar tentang jaringan, kalian juga belajar tentang pemrograman, kalian juga belajar tentang desain web, memang unik sekali disini. tetapi tetap saja fokusnya ke jaringan dan komputer. seperti merakit/memperbaiki pc, konfigurasi perangkat jaringan seperti router, switch, accesspoint, dan perangkat lainnya, selain itu juga seperti merakit kabel lan, menyambung kabel fiber optik yang biasanya berada di tiang-tiang, itu juga tugasnya anak Tkj, dan sebagainya lah. <a href="#my-tkj" class="text-indigo-600 hover:underline">Lihat lebih Detail</a>
-              </p>
-            </div>
-          </div>
-          <div class="order-1 md:order-2">
-            <img src="asset/img/network.jpg" class="w-full h-64 md:h-[420px] rounded-xl object-cover shadow-md transition-transform duration-300 ease-out hover:scale-95 focus-within:scale-95" alt="Teknik Komputer Jaringan" />
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Back to Top Button -->
+  <button id="toTop" aria-label="Kembali ke atas"
+    class="hidden fixed bottom-6 right-6 z-30 h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg ring-1 ring-indigo-300/40 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-transform duration-200 hover:scale-105">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+      <path fill-rule="evenodd"
+        d="M12 3.75a.75.75 0 01.53.22l6.75 6.75a.75.75 0 11-1.06 1.06L12.75 6.81v12.44a.75.75 0 11-1.5 0V6.81L5.78 11.78a.75.75 0 11-1.06-1.06l6.75-6.75a.75.75 0 01.53-.22z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
 
-    <!-- blog end -->
-
-    <!-- Back to Top Button -->
-    <button
-      id="toTop"
-      aria-label="Kembali ke atas"
-      class="hidden fixed bottom-6 right-6 z-30 h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg ring-1 ring-indigo-300/40 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-transform duration-200 hover:scale-105"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-        <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.53.22l6.75 6.75a.75.75 0 11-1.06 1.06L12.75 6.81v12.44a.75.75 0 11-1.5 0V6.81L5.78 11.78a.75.75 0 11-1.06-1.06l6.75-6.75a.75.75 0 01.53-.22z" clip-rule="evenodd" />
-      </svg>
-    </button>
-
-    <!-- my section -->
-      <section id="conclusion" class="py-16 sm:py-20 dark:bg-gray-800">
+  <!-- my section -->
+  <section id="conclusion" class="py-16 sm:py-20 dark:bg-gray-800">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-slate-100 mb-6">Kesimpulan</h1>
       <p class="text-base sm:text-lg text-gray-700 dark:text-slate-300 leading-relaxed mb-12">
-        Teknologi adalah cerminan dari imajinasi manusia. Di dunia ini, kita tidak hanya membangun, tetapi juga merangkai benang-benang yang menghubungkan jiwa. Dengan teknologi, manusia terhubung melintasi ruang dan waktu, dari masa lalu hingga masa depan yang kita ciptakan hari ini.
+        Teknologi adalah cerminan dari imajinasi manusia. Di dunia ini, kita tidak hanya membangun, tetapi juga
+        merangkai benang-benang yang menghubungkan jiwa. Dengan teknologi, manusia terhubung melintasi ruang dan waktu,
+        dari masa lalu hingga masa depan yang kita ciptakan hari ini.
       </p>
-      
+
       <figure class="mx-auto max-w-2xl">
         <blockquote class="border-l-4 border-blue-500 pl-4 sm:pl-6 italic text-gray-800 dark:text-slate-200 text-left">
-          <p class="text-lg sm:text-xl">"Even if humanity were to be wiped out, the world of science will continue to move forward."</p>
+          <p class="text-lg sm:text-xl">"Even if humanity were to be wiped out, the world of science will continue to
+            move forward."</p>
         </blockquote>
         <figcaption class="mt-4 text-right text-sm text-gray-600 dark:text-slate-400">
           — Senku
@@ -352,6 +354,7 @@
     </div>
   </section>
 
-    <script src="js/page.js"></script>
-  </body>
+  <script src="js/page.js"></script>
+</body>
+
 </html>
